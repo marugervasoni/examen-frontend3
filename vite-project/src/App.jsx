@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <Estatus />
+      <Estatus cantidad={likes}/>
       <Posteos likear={likear}/>
     </div>
   );

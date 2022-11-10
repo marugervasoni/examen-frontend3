@@ -12,16 +12,17 @@ import React, { useState } from 'react'
 //    button       (este boton debe permitir sumar likes)
 //    h5    (este h5 debe mostrar la cantidad de likes, pero si la misma es mayor a 10 debe decir "Más de 10 likes")
 
-export default function Post(likear, item) {
+export default function Post({likear, item}) {
 
     const [likes, setLikes] = useState(0)
 
   return (
     <div className='posteo'>
       {/* maquetar Post aquí */}
+      <h2>Post {item.id}</h2>
       <h3>{item.titulo}</h3>
       <p>{item.texto}</p>
-      <button onClick={likear}>Sumar likes</button>
+      <button onClick={() => {likear(); setLikes(likes +1)}}>Sumar likes</button>
       <h5>Likes: {likes > 10 ? "Mas de 10 likes" : likes}</h5>  
     </div>
   )

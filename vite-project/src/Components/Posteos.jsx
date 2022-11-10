@@ -8,11 +8,12 @@ import React from 'react'
 import data from './data.json'
 import Post from './Post'
 
-export default function Posteos(likear) {
+export default function Posteos({likear}) {
   
     return (
     <div className='container'>
       {/* renderizamos los Post aquí */}
+      <h1>Posteos</h1>
       {data.map((item) => <Post key={item.id} item={item} likear={likear} />)}
     </div>
   )
