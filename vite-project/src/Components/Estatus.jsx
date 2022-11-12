@@ -13,8 +13,9 @@ export default function Estatus({likes}) {
   return (
     <header>
         {/* maquetar Estatus aquí */}
-        <h1>Estatus</h1>
-        <span>Cantidad: {likes}</span>
+        <h1>Estatus de Posteos</h1>
+        <p>Likes totales: <span>{likes}</span></p>
+        {/* <span>Likes totales: {likes}</span> */}
     </header>
   )
 }

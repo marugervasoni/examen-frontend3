@@ -13,13 +13,14 @@ function App() {
 
   const [likes, setLikes] = useState(0)
 
-  const likear = () => {
+  const likear = () => { 
     setLikes(likes + 1)
+    // setLikes(prev => prev + 1)
   }
 
   return (
     <div className="App">
-      <Estatus cantidad={likes}/>
+      <Estatus likes={likes}/>
       <Posteos likear={likear}/>
     </div>
   );

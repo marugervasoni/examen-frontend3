@@ -13,8 +13,8 @@ export default function Posteos({likear}) {
     return (
     <div className='container'>
       {/* renderizamos los Post aquí */}
-      <h1>Posteos</h1>
-      {data.map((item) => <Post key={item.id} item={item} likear={likear} />)}
+      {data.map(item => <Post likear={likear} key={item.id} item={item} />)}
+      {/* {data.map((item) => <Post key={item.id} item={item} likear={likear} />)} */}
     </div>
   )
 }

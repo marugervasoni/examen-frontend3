@@ -14,16 +14,25 @@ import React, { useState } from 'react'
 
 export default function Post({likear, item}) {
 
-    const [likes, setLikes] = useState(0)
+  // const [likes, setLikes] = useState(0)
+  const [likes, setLikes] = useState(item.likes)
+
+  //esto no lo hice:
+  const handleLike = () => {
+    setLikes(likes +1)
+    likear()
+    console.log('suma 1 like '+item.titulo);
+  }
 
   return (
     <div className='posteo'>
       {/* maquetar Post aquí */}
-      <h2>Post {item.id}</h2>
       <h3>{item.titulo}</h3>
       <p>{item.texto}</p>
-      <button onClick={() => {likear(); setLikes(likes +1)}}>Sumar likes</button>
-      <h5>Likes: {likes > 10 ? "Mas de 10 likes" : likes}</h5>  
+      {/* <button onClick={() => {likear(); setLikes(likes +1)}}>👍</button> */}
+      <button onClick={handleLike}>👍</button>
+      {/* <h5>Likes: {likes >= 10 ? "Más de 10 likes" : likes}</h5> */}
+      <h5> {likes >= 10 ? "Más de 10 likes" : "Likes: " +likes}</h5>  
     </div>
   )
 }
